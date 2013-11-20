@@ -3,6 +3,7 @@ http://meyerweb.com/eric/tools/css/reset/
 v2.0 | 20110126
 License: none (public domain)
 */
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -23,6 +24,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
@@ -47,36 +49,17 @@ table {
 	border-spacing: 0;
 }
 
-::-webkit-input-placeholder {
-	color: dimgray;
-}
-:-moz-placeholder { /* Firefox 18- */
-	color: dimgray;
-}
-::-moz-placeholder {  /* Firefox 19+ */
-	color: dimgray;
-}
-:-ms-input-placeholder {  
-	color: dimgray;
-}
-
-[placeholder]:focus::-webkit-input-placeholder {
-	opacity: 0;
-	transition: opacity 0.5s 0.5s ease; 
-}
-textarea:focus, input:focus{
-    outline: 0;
-}
-
 html, body {
 	height: 100%;
 }
+
 
 /*main styles*/
 
 html {
 	background: url("beach - red.jpg"), url("penguins - blue.jpg");
-	background-position: top left, top right;
+    background-attachment: fixed;
+	background-position: left top, right top;
 	background-repeat: no-repeat;
 	background-size: 50% 100%;
 }
@@ -84,40 +67,188 @@ html {
 body {
 	font-family: 'Quicksand', sans-serif;
 	font-size: 20px;
+	letter-spacing: -2px;
 }
 
 h1 {
-	font-size: 6em;
-	letter-spacing: -2px;
-	padding-top: .5em;
+	font-size: 9em;
+	text-align: center;
+}
+h2 {
+	font-size: 5em;
+	text-align: center;
+}
+h3 {
+	font-size: 3em;
+	font-weight: bold;
 	text-align: center;
 }
 
-#left, #right {
+textarea:focus, input:focus{
+    outline: 0;
+}
+
+#hot, #cold {
 	display: inline-block;
 	float: left;
-	overflow: hidden;
+	margin: 1.5em 0;
 	width: 50%;
 }
-#left {
+#hot {
 	color: darkred;
 }
-#right {
+#cold {
 	color: darkblue;
 }
 
-#guess input[type="text"] { 
-	background-color: white;
-	border: none;
-	bottom: 2em;
-	color: black;
-	font-family: 'Quicksand', sans-serif;
-	font-size: 3em;
-	left: 0;
-	letter-spacing: -3px;
-	padding: .5em 0;
-	position: absolute;
-	text-align: center;
+#guessfield {
+	margin: 0 auto;
 	width: 100%;
-	word-spacing: 12px;
+}
+
+#guessfield input[type="text"]{ 
+	background-color: white;
+	border: 2px solid antiquewhite;
+	color: dimgray;
+	display: block;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 3.25em;
+	font-style: italic;
+	letter-spacing: -2px;
+	margin: 1.5em auto;
+	padding: 50px 0;
+	text-align: center;
+	white-space: normal;
+	width: 70%;
+	word-spacing: 6px;
+}
+
+::-webkit-input-placeholder {
+	color: gray;
+}
+:-moz-placeholder { /* Firefox 18- */
+	color: gray;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+	color: gray;
+}
+:-ms-input-placeholder {  
+	color: gray;
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+	opacity: 0;
+	transition: opacity 6s ease-out; 
+}
+
+.buttoncontainer {
+	margin: 1em auto;
+	width: 100%;
+}
+
+#checkguessbutton {
+	background-color: antiquewhite;
+	border: none;
+	border-radius: 60px;
+	color: black;
+	display: block;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 1.75em;
+	font-weight: bold;
+	padding: 30px 40px;
+	letter-spacing: -2px;
+	margin: .5em auto;
+	text-align: center;
+	white-space: normal;
+	word-spacing: 3px;	
+	-moz-box-shadow:
+		3px 5px 2px rgba(128,128,128,0.7),
+		inset 0px 0px 3px rgba(255,255,255,1);
+	-webkit-box-shadow:
+		3px 5px 2px rgba(128,128,128,0.7),
+		inset 0px 0px 3px rgba(255,255,255,1);
+	box-shadow:
+		3px 5px 2px rgba(128,128,128,0.7),
+		inset 0px 0px 3px rgba(255,255,255,1);
+}
+
+#newgamebutton {
+	background-color: transparent;
+	border: none;
+	center: 0;
+	color: antiquewhite;
+	display: block;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 1.75em;
+	font-weight: bold;
+	margin: 3em auto 0 auto;
+	padding: 40px 20px;
+	letter-spacing: -2px;
+	text-align: center;
+	white-space: normal;
+	word-spacing: 3px;
+}
+
+#playthegamebutton {
+	background-color: antiquewhite;
+	border: none;
+	border-radius: 60px;
+	color: black;
+	display: block;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 2.25em;
+	font-weight: bold;
+	letter-spacing: -2px;
+	margin: 3em auto 0 auto;
+	padding: 30px 40px;
+	text-align: center;
+	white-space: normal;
+	word-spacing: 3px;
+	-moz-box-shadow:
+		3px 5px 2px rgba(128,128,128,0.7),
+		inset 0px 0px 3px rgba(255,255,255,1);
+	-webkit-box-shadow:
+		3px 5px 2px rgba(128,128,128,0.7),
+		inset 0px 0px 3px rgba(255,255,255,1);
+	box-shadow:
+		3px 5px 2px rgba(128,128,128,0.7),
+		inset 0px 0px 3px rgba(255,255,255,1);
+}
+
+#winner { 
+	background-color: white;
+	color: black;
+	display: block;
+	margin: 2em auto 0 auto;
+	padding: 40px 0;
+	text-align: center;
+	white-space: normal;
+	width: 100%;
+	word-spacing: 6px;
+}
+
+#playagainbutton {
+	background-color: antiquewhite;
+	border: none;
+	border-radius: 60px;
+	color: black;
+	display: block;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 2.25em;
+	font-weight: bold;
+	letter-spacing: -2px;
+	margin: 3.5em auto 0 auto;
+	padding: 30px 60px;
+	text-align: center;
+	white-space: normal;
+	word-spacing: 3px;
+	-moz-box-shadow:
+		3px 5px 2px rgba(128,128,128,0.7),
+		inset 0px 0px 3px rgba(255,255,255,1);
+	-webkit-box-shadow:
+		3px 5px 2px rgba(128,128,128,0.7),
+		inset 0px 0px 3px rgba(255,255,255,1);
+	box-shadow:
+		3px 5px 2px rgba(128,128,128,0.7),
+		inset 0px 0px 3px rgba(255,255,255,1);
 }
