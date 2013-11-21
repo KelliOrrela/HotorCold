@@ -6,14 +6,9 @@ var guess;
 //Load start screen
 $(window).load(function() {
 	       	$("html").css({"background": "url(question.jpg) no-repeat center center fixed", "background-size": "cover"});
+	       	$("#hot, #cold").css({"margin-bottom": "8em"});
 	       	$("#playthegamebutton").show();
-	       	$("#hot").css({"margin-bottom": "8em"});
-	       	$("#cold").css({"margin-bottom": "8em"});
-  	       	$("#guessfield").hide();
-         	$("#checkguessbutton").hide();
-         	$("#newgamebutton").hide();
-   	      	$("#playagainbutton").hide();
-  		   	$("#winner").hide();
+  	       	$("#guessfield, #checkguessbutton, #newgamebutton, #playagainbutton, #winner").hide();
          	}
 );
 
@@ -22,15 +17,10 @@ $(window).load(function() {
 function setUp() {
 			$("html").removeAttr("style");
    		   	$("#guessfield").css({"width": "100%"});
-  	       	$("#guessfield").show();
-         	$("#checkguessbutton").show();
-         	$("#newgamebutton").show();
-   	 		$("#hot").show();
-	  		$("#cold").show();
-	       	$("#playagainbutton").hide();
-	       	$("#playthegamebutton").hide();
-   		   	$("#winner").hide();
+  	       	$("#guessfield, #checkguessbutton, #newgamebutton, #hot, #cold").show();
+	       	$("#playagainbutton, #playthegamebutton, #winner").hide();
    			document.getElementById("guessinput").value="Type a guess from 1 to 100.";
+
 
 //Generate new random number
 randomNumber = (Math.floor(Math.random() * 100) + 1);
@@ -70,12 +60,8 @@ function checkGuess() {
     {
 	   	$("html").css({"background": "url(winner.jpg) no-repeat center center fixed", "background-size": "cover"});
 	   	$("#guessfield").css({"width": "18%"});
-	   	$("#winner").show();
-      	$("#playagainbutton").show();
-      	$("#checkguessbutton").hide();
-      	$("#newgamebutton").hide();
-  		$("#hot").hide();
-  		$("#cold").hide();
+	   	$("#winner, #playagainbutton").show();
+      	$("#checkguessbutton, #newgamebutton, #hot, #cold").hide();
     }
 
 }

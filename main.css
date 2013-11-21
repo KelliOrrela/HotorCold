@@ -91,6 +91,7 @@ textarea:focus, input:focus{
 #hot, #cold {
 	display: inline-block;
 	float: left;
+	letter-spacing: -3px;
 	margin: 1.5em 0;
 	width: 50%;
 }
