@@ -3,27 +3,38 @@ var randomNumber;
 var guess;
 
 
-//Load start screen
-$(window).load(function() {
-	       	$("html").css({"background": "url(question.jpg) no-repeat center center fixed", "background-size": "cover"});
-	       	$("#hot, #cold").css({"margin-bottom": "8em"});
-	       	$("#playthegamebutton").show();
-  	       	$("#guessfield, #checkguessbutton, #newgamebutton, #playagainbutton, #winner").hide();
-         	}
-);
+//Set up start screen
+$(document).ready(function(){
+   	$(".checkguessbutton, .newgamebutton, .playagainbutton").toggle();
+   	$("#guessinput").hide();
+})
 
 
-//Set up guessing screen
-function setUp() {
-			$("html").removeAttr("style");
-   		   	$("#guessfield").css({"width": "100%"});
-  	       	$("#guessfield, #checkguessbutton, #newgamebutton, #hot, #cold").show();
-	       	$("#playagainbutton, #playthegamebutton, #winner").hide();
-   			document.getElementById("guessinput").value="Type a guess from 1 to 100.";
+//Set up game
+function playTheGame() {
+	$("body").addClass("gamescreen");
+	$(".playthegamebutton, .guessinput, .checkguessbutton, .newgamebutton").toggle();
+	$("#guessinput").show();
+    $(".guess").css({"width": "100%"});
+	document.getElementById("guessinput").value="Type a guess from 1 to 100."; 
+
+	//Generate new random number
+	randomNumber = (Math.floor(Math.random() * 100) + 1);
+}
 
 
-//Generate new random number
-randomNumber = (Math.floor(Math.random() * 100) + 1);
+//Set up game to play again
+function playAgain() {
+	$("body").removeClass("winnerscreen");
+	$("body").addClass("gamescreen");
+	$(".guessinput, .checkguessbutton, .newgamebutton").toggle();
+	$(".playthegamebutton").hide();
+	$("#guessinput, .hot, .cold").show();
+    $(".guess").css({"width": "100%"});
+	document.getElementById("guessinput").value="Type a guess from 1 to 100."; 
+
+	//Generate new random number
+	randomNumber = (Math.floor(Math.random() * 100) + 1);
 }
 
 
@@ -41,6 +52,7 @@ function checkGuess() {
   	if (isNaN(guess))
     {
         document.getElementById("guessinput").value="Not a number! Guess again.";
+   		window.alert("The answer is " + randomNumber + ".");
     }
 
 	//Check if guess is less than random number
@@ -58,10 +70,10 @@ function checkGuess() {
 //Check if guess is equal to random number
     else if (guess == randomNumber)
     {
-	   	$("html").css({"background": "url(winner.jpg) no-repeat center center fixed", "background-size": "cover"});
-	   	$("#guessfield").css({"width": "18%"});
-	   	$("#winner, #playagainbutton").show();
-      	$("#checkguessbutton, #newgamebutton, #hot, #cold").hide();
+   	$("guess").css({"width": "18%"});
+  	$("body").addClass("winnerscreen");
+	$(".guessinput, .checkguessbutton, .newgamebutton, .winnertext, .playagainbutton").toggle();
+	$("#guessinput, .playthegamebutton, .hot, .cold").hide();
     }
 
 }

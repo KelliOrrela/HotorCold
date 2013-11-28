@@ -14,44 +14,41 @@
 
 	<body>
 
-	
-		<div id="hot">
+
+		<div class="hot">
 			<h1>HOT?</h1>
 		</div>
 		
-		<div id="cold">
+		<div class="cold">
 			<h1>COLD?</h1>
 		</div>
 
-		
-		<form name="guessform">
-				<div id="guessfield">
-					<input type="text" input id="guessinput" name="guessinput" maxlength="3" placeholder="Type a guess from 1 to 100." autocomplete="off" onFocus="this.value=''" />	
-				</div>
-		</form>
-
-
 		<div class="buttoncontainer">
-			<input type="button" onclick="setUp();" id="playthegamebutton" value="Play the game" />
+			<input type="button" onclick="playTheGame();" class="playthegamebutton" value="Play the game" />
+		</div>
+
+
+		<div class="guess">
+			<input type="text" input id="guessinput" name="guessinput" maxlength="3" placeholder="Type a guess from 1 to 100." autocomplete="off" onFocus="this.value=''" />	
 		</div>
 
 		<div class="buttoncontainer">
-			<input type="button" onclick="checkGuess();" id="checkguessbutton" value="Check your guess" />
-		</div>
-
-		<div class="buttoncontainer">
-			<input type="button" onclick="setUp();" id="newgamebutton" value="Start a new game" />
+			<input type="button" onclick="checkGuess();" class="checkguessbutton" value="Check your guess" />
 		</div>
 		
+		<div class="buttoncontainer">
+			<input type="button" onclick="playTheGame();" class="newgamebutton" value="Start a new game" />
+		</div>
 
-		<div id="winner">
+
+		<div class="winnertext">
 			<h2>That's it! You're the winner!</h2>
 		</div>
 
-
 		<div class="buttoncontainer">
-		<input type="button" onclick="setUp();" id="playagainbutton" value="Play again" />
+		<input type="button" onclick="playAgain();" class="playagainbutton" value="Play again" />
 		</div>
+
 
 
 	</body>
