@@ -57,15 +57,14 @@ html, body {
 /*main styles*/
 
 body {
-	font-family: 'Quicksand', sans-serif;
-	font-size: 20px;
-	letter-spacing: -2px;
-		background: url("question.jpg");
+	background: url("question.jpg");
     background-attachment: fixed;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
-
+	font-family: 'Quicksand', sans-serif;
+	font-size: 20px;
+	letter-spacing: -2px;
 }
 
 h1 {
@@ -82,43 +81,22 @@ h3 {
 	text-align: center;
 }
 
-textarea:focus, input:focus{
-    outline: 0;
-}
 
-.gamescreen {
-	background: url("beach - red.jpg"), url("penguins - blue.jpg");
-    background-attachment: fixed;
-	background-position: left top, right top;
-	background-repeat: no-repeat;
-	background-size: 50% 100%;
-}
-
-.winnerscreen {
-	background: url("winner.jpg");
-	background-attachment: fixed;
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.winnertext { 
-	background-color: white;
-	color: black;
-	display: none;
-	margin: 10em auto 0 auto;
-	padding: 100px 0;
-	text-align: center;
-	white-space: normal;
+.start, .game, .winner {
 	width: 100%;
-	word-spacing: 6px;
 }
+
+
+.apptitle {
+	display: block;
+	padding-top: 6em;
+}
+
 
 .hot, .cold {
 	display: inline-block;
 	float: left;
 	letter-spacing: -3px;
-	margin: 3em 0 10em 0;
 	width: 50%;
 }
 .hot {
@@ -128,11 +106,48 @@ textarea:focus, input:focus{
 	color: darkblue;
 }
 
-.guess {
-	margin: 0 auto;
+
+.playthegamebutton {
+	background-color: antiquewhite;
+	border: none;
+	border-radius: 60px;
+	color: black;
+	display: block;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 2.25em;
+	font-weight: bold;
+	letter-spacing: -2px;
+	margin: 7em auto;
+	padding: 30px 40px;
+	text-align: center;
+	white-space: normal;
+	word-spacing: 3px;
+	-moz-box-shadow:
+		3px 5px 2px rgba(128,128,128,0.7),
+		inset 0px 0px 3px rgba(255,255,255,1);
+	-webkit-box-shadow:
+		3px 5px 2px rgba(128,128,128,0.7),
+		inset 0px 0px 3px rgba(255,255,255,1);
+	box-shadow:
+		3px 5px 2px rgba(128,128,128,0.7),
+		inset 0px 0px 3px rgba(255,255,255,1);
+}
+
+
+.gamebackground {
+	background: url("beach - red.jpg"), url("penguins - blue.jpg");
+    background-attachment: fixed;
+	background-position: left top, right top;
+	background-repeat: no-repeat;
+	background-size: 50% 100%;
+}
+
+.guessfield {
+	margin-top: 12em;
 	width: 100%;
 }
-#guessinput[type="text"]{ 
+
+#guess { 
 	background-color: white;
 	border: 2px solid antiquewhite;
 	color: dimgray;
@@ -163,38 +178,11 @@ textarea:focus, input:focus{
 
 [placeholder]:focus::-webkit-input-placeholder {
 	opacity: 0;
-	transition: opacity 6s ease-out; 
+	transition: opacity 2s ease-out; 
 }
 
-.buttoncontainer {
-	margin: 2em auto;
-	width: 100%;
-}
-
-.playthegamebutton {
-	background-color: antiquewhite;
-	border: none;
-	border-radius: 60px;
-	color: black;
-	display: block;
-	font-family: 'Quicksand', sans-serif;
-	font-size: 2.25em;
-	font-weight: bold;
-	letter-spacing: -2px;
-	margin: 0 auto;
-	padding: 30px 40px;
-	text-align: center;
-	white-space: normal;
-	word-spacing: 3px;
-	-moz-box-shadow:
-		3px 5px 2px rgba(128,128,128,0.7),
-		inset 0px 0px 3px rgba(255,255,255,1);
-	-webkit-box-shadow:
-		3px 5px 2px rgba(128,128,128,0.7),
-		inset 0px 0px 3px rgba(255,255,255,1);
-	box-shadow:
-		3px 5px 2px rgba(128,128,128,0.7),
-		inset 0px 0px 3px rgba(255,255,255,1);
+textarea:focus, input:focus{
+    outline: 0;
 }
 
 .checkguessbutton {
@@ -208,7 +196,7 @@ textarea:focus, input:focus{
 	font-weight: bold;
 	padding: 30px 40px;
 	letter-spacing: -2px;
-	margin: 0 auto;
+	margin: 2em auto 0 auto;
 	text-align: center;
 	white-space: normal;
 	word-spacing: 3px;	
@@ -232,16 +220,36 @@ textarea:focus, input:focus{
 	font-size: 1.75em;
 	font-weight: bold;
 	letter-spacing: -2px;
-	margin: 0 auto;
-	padding: 4em 0 2em 0;
+	margin: 3em auto;
 	text-align: center;
 	white-space: normal;
 	word-spacing: 3px;
 }
 
+
+.winnerbackground {
+	background: url("winner.jpg");
+	background-attachment: fixed;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.winnertext { 
+	background-color: white;
+	color: black;
+	display: block;
+	margin: 10em auto 4em auto;
+	padding: 100px 0;
+	text-align: center;
+	white-space: normal;
+	width: 100%;
+	word-spacing: 6px;
+}
+
 .playagainbutton {
 	background-color: antiquewhite;
-	border: none;
+	border: block;
 	border-radius: 60px;
 	color: black;
 	display: block;
@@ -249,7 +257,7 @@ textarea:focus, input:focus{
 	font-size: 2.25em;
 	font-weight: bold;
 	letter-spacing: -2px;
-	margin: 0 auto;
+	margin: 3em auto;
 	padding: 30px 60px;
 	text-align: center;
 	white-space: normal;
