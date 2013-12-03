@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
 	//Variables
 	var randomNumber;
@@ -6,23 +6,36 @@ $(document).ready(function(){
 
 	//Hide unneeded visual elements
 	$(".game, .winner").hide();
-  
+
+	//Allow alternative guess input with enter
+	$("#guess").keydown(function(e) {
+		if (e.which == 13) {
+			checkGuess();
+		}
+	});
+
 });
 
 
 //Set up to play game or start a new game
-function playTheGame() {
+function setUpGame() {
 
 	//Show game screen and hide unneeded visual elements
 	$("body").removeClass("winnerbackground").addClass("gamebackground");
-	$(".start, .winner").hide()
+	$(".start, .winner").hide();
 	$(".game").show();
 
-	//Show instructions in guess field
-	document.getElementById("guess").value="Type a guess from 1 to 100."; 
+	//Reset feedback
+	$("#guess").attr("placeholder", "Type a guess from 1 to 100.").val("").focus().blur();
+
+	//Remove feedback when user clicks to type guess
+	$("#guess[placeholder]").click(function() {
+		this.value = '';
+	});
 
 	//Generate and assign random number
 	randomNumber = (Math.floor(Math.random() * 100) + 1);
+
 }
 
 
@@ -31,23 +44,29 @@ function checkGuess() {
 
 	//Assign guess value
    	guess = document.getElementById("guess").value;
-	
-	//Check that guess is number
+
+	//Check if guess is number
 	if (isNaN(guess))
    		{
-       		document.getElementById("guess").value="Not a number! Guess again.";
-	    }
+       		$("#guess").attr("placeholder", "That's not a number! Guess again.").val("").focus().blur();
+   		}
+
+	//Check if guess is from 1 to 100
+    else if ((guess<1 || guess>100)) 
+    	{
+       		$("#guess").attr("placeholder", "Type a guess from 1 to 100.").val("").focus().blur();
+    	}
 
 	//Check if guess is less than random number
 	else if (guess < randomNumber)
    		{
-  			document.getElementById("guess").value="Too low! Guess again.";
+       		$("#guess").attr("placeholder", "Too low! Guess again.").val("").focus().blur();
    		}
 
 	//Check if guess is greater than random number
 	else if (guess > randomNumber)
    		{
-			document.getElementById("guess").value="Too high! Guess again.";
+       		$("#guess").attr("placeholder", "Too high! Guess again.").val("").focus().blur();
    		}
 
 	//Check if guess is equal to random number
@@ -57,6 +76,7 @@ function checkGuess() {
 		$("body").addClass("winnerbackground");
 		$(".game").hide();
 		$(".winner").show();
+		$(".winnertext").prepend("<h3>" + randomNumber + "</h3>");
 		}
 
 }

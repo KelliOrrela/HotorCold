@@ -31,7 +31,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 100%;
+	line-height: 200%;
 }
 ol, ul {
 	list-style: none;
@@ -72,15 +72,21 @@ h1 {
 	text-align: center;
 }
 h2 {
-	font-size: 5em;
+	display: inline;
+	font-size: 4em;
 	text-align: center;
 }
 h3 {
-	font-size: 3em;
+	color: darkred;
+	display: inline;
+	font-size: 4em;
 	font-weight: bold;
 	text-align: center;
 }
 
+input[type=button] {
+	cursor: pointer;
+}
 
 .start, .game, .winner {
 	width: 100%;
@@ -106,7 +112,6 @@ h3 {
 	color: darkblue;
 }
 
-
 .playthegamebutton {
 	background-color: antiquewhite;
 	border: none;
@@ -117,20 +122,20 @@ h3 {
 	font-size: 2.25em;
 	font-weight: bold;
 	letter-spacing: -2px;
-	margin: 7em auto;
+	margin: 5.5em auto;
 	padding: 30px 40px;
 	text-align: center;
 	white-space: normal;
 	word-spacing: 3px;
-	-moz-box-shadow:
-		3px 5px 2px rgba(128,128,128,0.7),
-		inset 0px 0px 3px rgba(255,255,255,1);
 	-webkit-box-shadow:
-		3px 5px 2px rgba(128,128,128,0.7),
+		3px 10px 2px rgba(128,128,128,0.95),
 		inset 0px 0px 3px rgba(255,255,255,1);
 	box-shadow:
-		3px 5px 2px rgba(128,128,128,0.7),
+		3px 10px 2px rgba(128,128,128,0.95),
 		inset 0px 0px 3px rgba(255,255,255,1);
+
+     animation: pulsingbutton 1.75s ease-in-out 1.75s infinite;
+     -webkit-animation: pulsingbutton 1.75s ease-in-out 1.75s infinite;
 }
 
 
@@ -143,13 +148,13 @@ h3 {
 }
 
 .guessfield {
-	margin-top: 12em;
+	margin-top: 10em;
 	width: 100%;
 }
 
 #guess { 
 	background-color: white;
-	border: 2px solid antiquewhite;
+	border: 2px inset antiquewhite;
 	color: dimgray;
 	display: block;
 	font-family: 'Quicksand', sans-serif;
@@ -160,29 +165,21 @@ h3 {
 	padding: 50px 0;
 	text-align: center;
 	white-space: normal;
-	width: 70%;
+	width: 75%;
 	word-spacing: 6px;
 }
+
 ::-webkit-input-placeholder {
-	color: gray;
-}
-:-moz-placeholder { /* Firefox 18- */
-	color: gray;
-}
-::-moz-placeholder {  /* Firefox 19+ */
-	color: gray;
-}
-:-ms-input-placeholder {  
 	color: gray;
 }
 
 [placeholder]:focus::-webkit-input-placeholder {
 	opacity: 0;
-	transition: opacity 2s ease-out; 
+	transition: opacity 1s .5s ease-out; 
 }
 
-textarea:focus, input:focus{
-    outline: 0;
+textarea:focus, input:focus {
+	outline: none;
 }
 
 .checkguessbutton {
@@ -200,14 +197,11 @@ textarea:focus, input:focus{
 	text-align: center;
 	white-space: normal;
 	word-spacing: 3px;	
-	-moz-box-shadow:
-		3px 5px 2px rgba(128,128,128,0.7),
-		inset 0px 0px 3px rgba(255,255,255,1);
 	-webkit-box-shadow:
-		3px 5px 2px rgba(128,128,128,0.7),
+		3px 10px 2px rgba(128,128,128,0.95),
 		inset 0px 0px 3px rgba(255,255,255,1);
 	box-shadow:
-		3px 5px 2px rgba(128,128,128,0.7),
+		3px 10px 2px rgba(128,128,128,0.95),
 		inset 0px 0px 3px rgba(255,255,255,1);
 }
 
@@ -220,12 +214,12 @@ textarea:focus, input:focus{
 	font-size: 1.75em;
 	font-weight: bold;
 	letter-spacing: -2px;
-	margin: 3em auto;
+	margin: 0 auto;
+	padding: 3em 0;
 	text-align: center;
 	white-space: normal;
 	word-spacing: 3px;
 }
-
 
 .winnerbackground {
 	background: url("winner.jpg");
@@ -239,8 +233,10 @@ textarea:focus, input:focus{
 	background-color: white;
 	color: black;
 	display: block;
+	letter-spacing: -3px;
+	line-height: 4em;
 	margin: 10em auto 4em auto;
-	padding: 100px 0;
+	padding: 3.5em 0 2em 0;
 	text-align: center;
 	white-space: normal;
 	width: 100%;
@@ -249,7 +245,7 @@ textarea:focus, input:focus{
 
 .playagainbutton {
 	background-color: antiquewhite;
-	border: block;
+	border: none;
 	border-radius: 60px;
 	color: black;
 	display: block;
@@ -262,13 +258,28 @@ textarea:focus, input:focus{
 	text-align: center;
 	white-space: normal;
 	word-spacing: 3px;
-	-moz-box-shadow:
-		3px 5px 2px rgba(128,128,128,0.7),
-		inset 0px 0px 3px rgba(255,255,255,1);
 	-webkit-box-shadow:
-		3px 5px 2px rgba(128,128,128,0.7),
+		3px 10px 2px rgba(128,128,128,0.95),
 		inset 0px 0px 3px rgba(255,255,255,1);
 	box-shadow:
-		3px 5px 2px rgba(128,128,128,0.7),
+		3px 10px 2px rgba(128,128,128,0.95),
 		inset 0px 0px 3px rgba(255,255,255,1);
+
+     animation: pulsingbutton 1.75s ease-in-out 3.5s infinite;
+     -webkit-animation: pulsingbutton 1.75s ease-in-out 3.5s infinite;
+}
+
+
+@keyframes pulsingbutton
+{
+0%    {font-size: 2.25em}
+50%   {font-size: 2.5em}
+100%  {font-size: 2.25em}
+}
+
+@-webkit-keyframes pulsingbutton
+{
+0%    {font-size: 2.25em}
+50%   {font-size: 2.5em}
+100%  {font-size: 2.25em}
 }

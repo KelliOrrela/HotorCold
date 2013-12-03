@@ -30,7 +30,7 @@
 
 			</div>
 
-			<input type="button" onclick="playTheGame();" class="playthegamebutton" value="Play the game" />
+			<input type="button" onclick="setUpGame();" class="playthegamebutton" value="Play with me" />
 
 		</div>
 
@@ -51,13 +51,12 @@
 			</div>
 		
 			<div class="guessfield">
-				<input type="text" name="guess" id="guess"  maxlength="3" placeholder="Type a guess from 1 to 100." autocomplete="off" onfocus="this.value=''" />	
+				<input type="text" name="guess" id="guess" maxlength="3" placeholder="Type a guess from 1 to 100." autocomplete="off" />	
 			</div>
-
 
 			<input type="button" onclick="checkGuess();" class="checkguessbutton" value="Check your guess" />
 	
-			<input type="button" onclick="playTheGame();" class="newgamebutton" value="Start a new game" />
+			<input type="button" onclick="setUpGame();" class="newgamebutton" value="Start a new game" />
 	
 		</div>
 
@@ -66,10 +65,10 @@
 		<div class="winner">
 
 			<div class="winnertext">
-				<h2>That's it! You're the winner!</h2>
+				<h2>&nbsp;is right!&nbsp; You're a winner!</h2>
 			</div>
 
-			<input type="button" onclick="playTheGame();" class="playagainbutton" value="Play again" />
+			<input type="button" onclick="setUpGame();" class="playagainbutton" value="Play again" />
 
 		</div>
 
