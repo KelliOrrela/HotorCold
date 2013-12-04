@@ -4,6 +4,9 @@ $(document).ready(function() {
 	var randomNumber;
 	var guess;
 
+	//Preload images
+	$('<img src="question.jpg"> <img src="beach - red.jpg"/> <img src="penguins - blue.jpg"> <img src="winner.jpg"> ');
+
 	//Hide unneeded visual elements
 	$(".game, .winner").hide();
 
@@ -26,7 +29,8 @@ function setUpGame() {
 	$(".game").show();
 
 	//Reset feedback
-	$("#guess").attr("placeholder", "Type a guess from 1 to 100.").val("").focus().blur();
+	$("#guess").attr("placeholder", "Type a guess from 1 to 100.").val("");
+	$("#guess").focus();
 
 	//Remove feedback when user clicks to type guess
 	$("#guess[placeholder]").click(function() {
@@ -49,24 +53,34 @@ function checkGuess() {
 	if (isNaN(guess))
    		{
        		$("#guess").attr("placeholder", "That's not a number! Guess again.").val("").focus().blur();
+       		$("#guess").focus();
    		}
 
 	//Check if guess is from 1 to 100
-    else if ((guess<1 || guess>100)) 
+    else if (guess<1 || guess>100)
     	{
-       		$("#guess").attr("placeholder", "Type a guess from 1 to 100.").val("").focus().blur();
+       		$("#guess").attr("placeholder", "That's not from 1 to 100! Guess again.").val("").focus().blur();
+       		$("#guess").focus();
     	}
 
+	//Check if guess is an integer
+    else if (guess % 1 !=0)
+    	{
+       		$("#guess").attr("placeholder", "That's not a whole number! Guess again.").val("").focus().blur();
+       		$("#guess").focus();
+    	}
 	//Check if guess is less than random number
 	else if (guess < randomNumber)
    		{
        		$("#guess").attr("placeholder", "Too low! Guess again.").val("").focus().blur();
+       		$("#guess").focus();
    		}
 
 	//Check if guess is greater than random number
 	else if (guess > randomNumber)
    		{
        		$("#guess").attr("placeholder", "Too high! Guess again.").val("").focus().blur();
+       		$("#guess").focus();
    		}
 
 	//Check if guess is equal to random number

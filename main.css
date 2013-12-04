@@ -122,7 +122,7 @@ input[type=button] {
 	font-size: 2.25em;
 	font-weight: bold;
 	letter-spacing: -2px;
-	margin: 5.5em auto;
+	margin: 6em auto;
 	padding: 30px 40px;
 	text-align: center;
 	white-space: normal;
@@ -134,8 +134,8 @@ input[type=button] {
 		3px 10px 2px rgba(128,128,128,0.95),
 		inset 0px 0px 3px rgba(255,255,255,1);
 
-     animation: pulsingbutton 1.75s ease-in-out 1.75s infinite;
-     -webkit-animation: pulsingbutton 1.75s ease-in-out 1.75s infinite;
+     animation: pulsingbutton .65s ease-in-out 2s 3;
+     -webkit-animation: pulsingbutton .65s ease-in-out 2s 2;
 }
 
 
@@ -155,27 +155,22 @@ input[type=button] {
 #guess { 
 	background-color: white;
 	border: 2px inset antiquewhite;
-	color: dimgray;
+	color: gray;
 	display: block;
 	font-family: 'Quicksand', sans-serif;
-	font-size: 3.25em;
+	font-size: 3.75em;
 	font-style: italic;
-	letter-spacing: -2px;
+	letter-spacing: -1px;
 	margin: 0 auto;
-	padding: 50px 0;
+	padding: 70px 0;
 	text-align: center;
 	white-space: normal;
-	width: 75%;
-	word-spacing: 6px;
+	width: 100%;
+	word-spacing: 5px;
 }
 
 ::-webkit-input-placeholder {
-	color: gray;
-}
-
-[placeholder]:focus::-webkit-input-placeholder {
-	opacity: 0;
-	transition: opacity 1s .5s ease-out; 
+	color: dimgray;
 }
 
 textarea:focus, input:focus {
@@ -240,7 +235,7 @@ textarea:focus, input:focus {
 	text-align: center;
 	white-space: normal;
 	width: 100%;
-	word-spacing: 6px;
+	word-spacing: 5px;
 }
 
 .playagainbutton {
@@ -265,21 +260,21 @@ textarea:focus, input:focus {
 		3px 10px 2px rgba(128,128,128,0.95),
 		inset 0px 0px 3px rgba(255,255,255,1);
 
-     animation: pulsingbutton 1.75s ease-in-out 3.5s infinite;
-     -webkit-animation: pulsingbutton 1.75s ease-in-out 3.5s infinite;
+     animation: pulsingbutton .65s ease-in-out 6s 2;
+     -webkit-animation: pulsingbutton .65s ease-in-out 6s 2;
 }
 
 
 @keyframes pulsingbutton
 {
 0%    {font-size: 2.25em}
-50%   {font-size: 2.5em}
-100%  {font-size: 2.25em}
+25%   {font-size: 2.4em}
+50%   {font-size: 2.25em}
 }
 
 @-webkit-keyframes pulsingbutton
 {
 0%    {font-size: 2.25em}
-50%   {font-size: 2.5em}
-100%  {font-size: 2.25em}
+25%   {font-size: 2.4em}
+50%   {font-size: 2.25em}
 }
