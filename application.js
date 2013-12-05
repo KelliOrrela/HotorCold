@@ -32,9 +32,8 @@ function setUpGame() {
 	//Reset feedback & variables
 	$("#guess").attr("placeholder", "Type a guess from 1 to 100.").val("");
 	$("#guess").focus();
+	$(".hotguesses, .coldguesses").empty();
 	$(".winnertext").empty();
-	var counter = 0;
-	var guesses = [];
 
 	//Remove feedback when user clicks to type guess
 	$("#guess[placeholder]").click(function() {
@@ -84,7 +83,6 @@ function checkGuess() {
    		//Show winner screen and hide unneeded elements
 		$("body").addClass("winnerbackground");
 		$(".game").hide();
-		$(".hotguesses, .coldguesses").empty();
 		$(".winner").show();
 		$(".winnertext").append("<h3>" + guess + "</h3>" + "<h2> is as </h2>" + "<h3> HOT </h3>" + "<h2> as it gets! You win!</h2>");
 		}
@@ -117,10 +115,10 @@ function checkGuess() {
 	else if (difference <= 49 && difference >= 25)
    			{
    			if (guess > randomNumber) {
-       			$("#guess").attr("placeholder", "Warmer! Guess lower.").val("").focus().blur();
+       			$("#guess").attr("placeholder", "Warm! Guess lower.").val("").focus().blur();
        		}
    			else {
-       			$("#guess").attr("placeholder", "Warmer! Guess higher.").val("").focus().blur();
+       			$("#guess").attr("placeholder", "Warm! Guess higher.").val("").focus().blur();
        		}
        			$("#guess").focus();
        			$(".hotguesses").append("<h4>" + guess + "</h4>");
