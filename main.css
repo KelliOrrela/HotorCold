@@ -86,10 +86,11 @@ h3 {
 	word-spacing: -6px;
 }
 h4 {
-	color: white;
+	color: black;
 	display: inline-block;
-	font-size: 3.5em;
-	padding: 30px;
+	font-size: 3em;
+	letter-spacing: -2px;
+	padding: 20px 30px;
 	text-align: center;
 	white-space: normal;
 }
@@ -102,10 +103,9 @@ input[type=button] {
 	width: 100%;
 }
 
-
 .apptitle {
 	display: block;
-	padding-top: 6em;
+	padding-top: 6.5em;
 }
 
 .hot, .cold {
@@ -119,6 +119,11 @@ input[type=button] {
 }
 .cold {
 	color: darkblue;
+}
+
+.hotguesses,
+.coldguesses {
+	margin: 4em 1em 1em 1em;
 }
 
 .playthegamebutton {
@@ -147,7 +152,6 @@ input[type=button] {
      -webkit-animation: pulsingbutton 1s ease-in-out 2s 1;
 }
 
-
 .gamebackground {
 	background: url("beach - red.jpg"), url("penguins - blue.jpg");
     background-attachment: fixed;
@@ -164,27 +168,24 @@ input[type=button] {
 #guess { 
 	background-color: white;
 	border: 2px inset antiquewhite;
-	color: gray;
+	color: black;
 	display: block;
 	font-family: 'Quicksand', sans-serif;
-	font-size: 3.75em;
-	font-style: italic;
+	font-size: 4em;
+	font-style: normal;
 	letter-spacing: -1px;
 	margin: 0 auto;
-	padding: 75px 0;
+	padding: 1em 0;
 	text-align: center;
 	white-space: normal;
 	width: 100%;
 	word-spacing: 5px;
 }
 
-.hotguesses,
-.coldguesses {
-	margin-top: 4em;
-}
-
 ::-webkit-input-placeholder {
-	color: gray;
+	color: dimgray;
+	font-style: normal;
+	font-weight: bold;
 }
 
 textarea:focus, input:focus {
@@ -242,10 +243,11 @@ textarea:focus, input:focus {
 	background-color: white;
 	color: black;
 	display: block;
+	font-weight: bold;
 	letter-spacing: -6px;
 	line-height: 4em;
-	margin: 6em auto 4em auto;
-	padding: 4em 0 3em 0;
+	margin: 6.5em auto 4em auto;
+	padding: 5em 0 3em 0;
 	text-align: center;
 	white-space: normal;
 	width: 100%;
