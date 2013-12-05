@@ -41,15 +41,27 @@
 			<div class="apptitle">
 
 				<div class="hot">
+
 					<h1>HOT?</h1>
+				
+					<div class="hotguesses">
+					</div>
+				
 				</div>
 		
 				<div class="cold">
+
 					<h1>COLD?</h1>
+
+					<div class="coldguesses">
+					</div>
+
 				</div>
 		
 			</div>
 		
+
+
 			<div class="guessfield">
 				<input type="text" name="guess" id="guess" maxlength="3" placeholder="Type a guess from 1 to 100." autocomplete="off" />	
 			</div>
@@ -65,7 +77,6 @@
 		<div class="winner">
 
 			<div class="winnertext">
-				<h2>&nbsp;is right!&nbsp; You're a winner!</h2>
 			</div>
 
 			<input type="button" onclick="setUpGame();" class="playagainbutton" value="Play again" />

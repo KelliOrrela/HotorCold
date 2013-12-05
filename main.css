@@ -79,9 +79,19 @@ h2 {
 h3 {
 	color: darkred;
 	display: inline;
-	font-size: 4em;
+	font-size: 5em;
 	font-weight: bold;
 	text-align: center;
+	white-space: normal;
+	word-spacing: -6px;
+}
+h4 {
+	color: white;
+	display: inline-block;
+	font-size: 3.5em;
+	padding: 30px;
+	text-align: center;
+	white-space: normal;
 }
 
 input[type=button] {
@@ -97,7 +107,6 @@ input[type=button] {
 	display: block;
 	padding-top: 6em;
 }
-
 
 .hot, .cold {
 	display: inline-block;
@@ -134,8 +143,8 @@ input[type=button] {
 		3px 10px 2px rgba(128,128,128,0.95),
 		inset 0px 0px 3px rgba(255,255,255,1);
 
-     animation: pulsingbutton .65s ease-in-out 2s 3;
-     -webkit-animation: pulsingbutton .65s ease-in-out 2s 2;
+     animation: pulsingbutton 1s ease-in-out 2s 1;
+     -webkit-animation: pulsingbutton 1s ease-in-out 2s 1;
 }
 
 
@@ -162,15 +171,20 @@ input[type=button] {
 	font-style: italic;
 	letter-spacing: -1px;
 	margin: 0 auto;
-	padding: 70px 0;
+	padding: 75px 0;
 	text-align: center;
 	white-space: normal;
 	width: 100%;
 	word-spacing: 5px;
 }
 
+.hotguesses,
+.coldguesses {
+	margin-top: 4em;
+}
+
 ::-webkit-input-placeholder {
-	color: dimgray;
+	color: gray;
 }
 
 textarea:focus, input:focus {
@@ -228,14 +242,14 @@ textarea:focus, input:focus {
 	background-color: white;
 	color: black;
 	display: block;
-	letter-spacing: -3px;
+	letter-spacing: -6px;
 	line-height: 4em;
-	margin: 10em auto 4em auto;
-	padding: 3.5em 0 2em 0;
+	margin: 6em auto 4em auto;
+	padding: 4em 0 3em 0;
 	text-align: center;
 	white-space: normal;
 	width: 100%;
-	word-spacing: 5px;
+	word-spacing: 6px;
 }
 
 .playagainbutton {
@@ -260,8 +274,8 @@ textarea:focus, input:focus {
 		3px 10px 2px rgba(128,128,128,0.95),
 		inset 0px 0px 3px rgba(255,255,255,1);
 
-     animation: pulsingbutton .65s ease-in-out 6s 2;
-     -webkit-animation: pulsingbutton .65s ease-in-out 6s 2;
+     animation: pulsingbutton 1s ease-in-out 3s 1;
+     -webkit-animation: pulsingbutton 1s ease-in-out 3s 1;
 }
 
 
@@ -270,6 +284,8 @@ textarea:focus, input:focus {
 0%    {font-size: 2.25em}
 25%   {font-size: 2.4em}
 50%   {font-size: 2.25em}
+75%   {font-size: 2.4em}
+100%   {font-size: 2.25em}
 }
 
 @-webkit-keyframes pulsingbutton
@@ -277,4 +293,6 @@ textarea:focus, input:focus {
 0%    {font-size: 2.25em}
 25%   {font-size: 2.4em}
 50%   {font-size: 2.25em}
+75%   {font-size: 2.4em}
+100%   {font-size: 2.25em}
 }
