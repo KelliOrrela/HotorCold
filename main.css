@@ -67,15 +67,20 @@ body {
 	letter-spacing: -2px;
 }
 
+/*Start screen app title font*/
 h1 {
 	font-size: 9em;
 	text-align: center;
 }
+
+/*Winner screen text font*/
 h2 {
 	display: inline;
 	font-size: 4em;
 	text-align: center;
 }
+
+/*Winner screen right answer font*/
 h3 {
 	color: darkred;
 	display: inline;
@@ -85,33 +90,37 @@ h3 {
 	white-space: normal;
 	word-spacing: -6px;
 }
+
+/*Guesses used font*/
 h4 {
 	color: black;
 	display: inline-block;
-	font-size: 3em;
+	font-size: 2em;
+	font-weight: bold;
 	letter-spacing: -2px;
-	padding: 20px 30px;
+	padding: 10px 25px;
 	text-align: center;
 	white-space: normal;
+}
+
+/*Game screen app title font*/
+h5 {
+	font-size: 6em;
+	margin-top: -.4em;
+	padding: .2em 0 .1em 0;
+	text-align: center;
 }
 
 input[type=button] {
 	cursor: pointer;
 }
 
-.start, .game, .winner {
-	width: 100%;
-}
-
-.apptitle {
-	display: block;
-	padding-top: 6.5em;
-}
-
+/*App title*/
 .hot, .cold {
 	display: inline-block;
 	float: left;
 	letter-spacing: -3px;
+	margin-top: 4em;
 	width: 50%;
 }
 .hot {
@@ -121,9 +130,12 @@ input[type=button] {
 	color: darkblue;
 }
 
+/*Guesses made*/
 .hotguesses,
 .coldguesses {
-	margin: 4em 1em 1em 1em;
+	display: inline-block;
+	float: left;
+	margin: 1.5em 0 .75em 0;
 }
 
 .playthegamebutton {
@@ -136,9 +148,11 @@ input[type=button] {
 	font-size: 2.25em;
 	font-weight: bold;
 	letter-spacing: -2px;
-	margin: 6em auto;
+	margin: 0 auto;
 	padding: 30px 40px;
+	position: relative;
 	text-align: center;
+	top: 4.5em;
 	white-space: normal;
 	word-spacing: 3px;
 	-webkit-box-shadow:
@@ -160,22 +174,18 @@ input[type=button] {
 	background-size: 50% 100%;
 }
 
-.guessfield {
-	margin-top: 10em;
-	width: 100%;
-}
-
 #guess { 
 	background-color: white;
-	border: 2px inset antiquewhite;
+	border: 3px inset antiquewhite;
 	color: black;
 	display: block;
 	font-family: 'Quicksand', sans-serif;
-	font-size: 4em;
+	font-size: 3em;
 	font-style: normal;
+	font-weight: bold;
 	letter-spacing: -1px;
 	margin: 0 auto;
-	padding: 1em 0;
+	padding: .65em 0;
 	text-align: center;
 	white-space: normal;
 	width: 100%;
@@ -201,9 +211,9 @@ textarea:focus, input:focus {
 	font-family: 'Quicksand', sans-serif;
 	font-size: 1.75em;
 	font-weight: bold;
-	padding: 30px 40px;
 	letter-spacing: -2px;
-	margin: 2em auto 0 auto;
+	margin: 1em auto 0 auto;
+	padding: 20px;
 	text-align: center;
 	white-space: normal;
 	word-spacing: 3px;	
@@ -224,8 +234,8 @@ textarea:focus, input:focus {
 	font-size: 1.75em;
 	font-weight: bold;
 	letter-spacing: -2px;
-	margin: 0 auto;
-	padding: 3em 0;
+	margin: .5em auto;
+	padding: 20px;
 	text-align: center;
 	white-space: normal;
 	word-spacing: 3px;
@@ -247,7 +257,7 @@ textarea:focus, input:focus {
 	letter-spacing: -6px;
 	line-height: 4em;
 	margin: 6.5em auto 4em auto;
-	padding: 5em 0 3em 0;
+	padding: 3.5em 0 1.5em 0;
 	text-align: center;
 	white-space: normal;
 	width: 100%;
@@ -264,7 +274,7 @@ textarea:focus, input:focus {
 	font-size: 2.25em;
 	font-weight: bold;
 	letter-spacing: -2px;
-	margin: 3em auto;
+	margin: 2em auto;
 	padding: 30px 60px;
 	text-align: center;
 	white-space: normal;
@@ -280,7 +290,7 @@ textarea:focus, input:focus {
      -webkit-animation: pulsingbutton 1s ease-in-out 3s 1;
 }
 
-
+/*CSS animations for startgamebutton and playagainbutton*/
 @keyframes pulsingbutton
 {
 0%    {font-size: 2.25em}
